@@ -1,10 +1,14 @@
 <script setup>
-defineProps({
+const props = defineProps({
   msg: {
     type: String,
     required: true,
   },
 })
+console.log('msg=', props.msg)
+
+const test = props.msg
+console.log('test=',test)
 </script>
 
 <template>

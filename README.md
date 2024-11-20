@@ -41,4 +41,28 @@ npm run build
 ### 따라하기
 > Build a taking note app with Vue 3 and composition API
 
-> https://www.youtube.com/watch?v=L5Jito_c0yU&t=658s"# vue-note-app" 
+> https://www.youtube.com/watch?v=L5Jito_c0yU&t=658s"
+
+# vue-note-app  시작
+
+### 컴포넌트 조립 
+> [컴포넌트 사용 예시 1] template에 import 한 컴포넌트(HelloWorld.vue)를 template에 추가한다.
+> [컴포넌트 사용 예시 1] 추가할때 추가할 컴포넌트(HelloWorld.vue)에 props > msg 를 선언하고 값을 세팅하여 컴포넌트에서 defineProps로 msg를 정의하고 사용한다
+![컴포넌트 사용 예시 1](image.png)
+
+> [컴포넌트 사용 예시 2] template에 import 한 컴포넌트(TheWelcome)를 template에 추가한다.
+> [컴포넌트 사용 예시 2] import 한 컴포넌트(TheWelcome) 안에서 컴포넌트(WelcomeItem)를 import 하여 를 template에 추가한다.
+> [컴포넌트 사용 예시 2] 추가할때 추가할 컴포넌트(WelcomeItem.vue) 영역에 3가지 영역으로 처리한다
+
+```html
+<template #icon><DocumentationIcon /></template>
+
+<template #heading>Documentation</template>
+
+text 영역
+```
+
+> 위 3가지 영역 값은 3가지 slot에 매핑된다.
+![소스](image-1.png)
+![html](image-2.png)
+![WelcomeItem](image-3.png)
