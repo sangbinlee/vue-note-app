@@ -35,6 +35,9 @@ npm run build
 ```sh
 npm run build
 ```
+[동영상 ](<../../../Users/sangb/Videos/2024-11-20 18-14-14.mkv>)
+
+
 
 ### 따라하기
 > Build a taking note app with Vue 3 and composition API
