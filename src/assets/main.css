@@ -119,6 +119,10 @@ input.search-input {
   border-bottom: 1px solid var(--border-color);
 }
 
+.dark-theme input.search-input {
+  color: white;
+}
+
 .search {
   display: none;
 }
