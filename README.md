@@ -35,8 +35,7 @@ npm run build
 ```sh
 npm run build
 ```
-[동영상 ](<../../../Users/sangb/Videos/2024-11-20 18-14-14.mkv>)
-
+[동영상]https://youtu.be/IieCni_eOSc
 
 
 ### 따라하기
