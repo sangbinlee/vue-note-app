@@ -66,3 +66,8 @@ text 영역
 ![소스](image-1.png)
 ![html](image-2.png)
 ![WelcomeItem](image-3.png)
+
+
+
+# auto format set
+![저장시 자동 포맷팅](image-4.png)
