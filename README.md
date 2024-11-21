@@ -94,9 +94,9 @@ git merge test 용 2222
 
 # 배포 자동화
 
-ubuntu24.04
+  - ubuntu24.04
 
-> docker or microk8s
-> ci/cd - jenkins
-> db server - postgres
-> web server - nginx
+    - docker or microk8s
+    - ci/cd - jenkins
+    - db server - postgres
+    - web server - nginx
