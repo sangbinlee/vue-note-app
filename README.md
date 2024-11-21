@@ -71,3 +71,18 @@ text 영역
 
 # auto format set
 ![저장시 자동 포맷팅](image-4.png)
+
+
+
+
+
+
+
+
+
+# 따라하기 완료 한 개발 화면 동영상
+https://www.youtube.com/watch?v=YLFQFqD7o7k
+
+
+
+
