@@ -94,9 +94,52 @@ git merge test 용 2222
 
 # 배포 자동화
 
-  - ubuntu24.04
+- ubuntu24.04
 
-    - docker or microk8s
-    - ci/cd - jenkins
-    - db server - postgres
-    - web server - nginx
+  - docker or microk8s
+  - ci/cd - jenkins
+  - db server - postgres
+  - web server - nginx
+
+# vscode
+
+C:\app\vue\vue-note-app>cd /app
+
+C:\app>cd vue\vue-note-app
+
+C:\app\vue\vue-note-app>code .
+
+C:\app\vue\vue-note-app>
+
+# jenkins set
+
+    https://jenkins.dev9.store/job/vue-note-app/
+
+  <pre>
+  pipeline {
+      agent any
+      stages {
+          stage('Prepare branch github_access_token url') {
+              agent any
+              steps {
+                  git branch: 'main', 
+                  credentialsId: '43134ce5-9160-45f6-b3b9-723105d81532', 
+                  url: 'https://github.com/sangbinlee/vue-note-app.git'
+              }
+              post {
+                  failure{
+                      error "Fail Cloned Repository"
+                  }
+              }
+          }
+      }
+  }    
+  
+  </pre>
+
+https://jenkins.dev9.store/manage/credentials/store/system/domain/_/
+https://jenkins.dev9.store/manage/credentials/store/system/domain/_/credential/43134ce5-9160-45f6-b3b9-723105d81532/
+![github_access_token](image-5.png)
+![Global credentials](image-6.png)
+![credentials](image-7.png)
+![Personal access tokens (classic)](image-8.png)
