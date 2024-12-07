@@ -321,6 +321,8 @@ if ($host = vue3.dev9.store) {
 
 root@dev9-ubuntu24-1:/etc/nginx/sites-available#
 
+
+
 # jenkins config
 
 ![jenkins config](image-11.png)
@@ -330,3 +332,19 @@ root@dev9-ubuntu24-1:/etc/nginx/sites-available#
     npm install
 
     ![npm install](image-12.png)
+
+
+# npm: not found
+  + echo ■ npm install
+  ■ npm install
+  + npm install
+  /var/lib/jenkins/workspace/vue-note-app@tmp/durable-fb04e966/script.sh.copy: 5: npm: not found
+
+
+![image](https://github.com/user-attachments/assets/be430e8f-b811-44df-96fb-04a5a7c5316a)
+
+
+
+
+
+
