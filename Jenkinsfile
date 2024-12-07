@@ -22,7 +22,7 @@ pipeline {
                     echo '■ npm run build'
                     npm run build
                     echo '■ npm run preview' 
-                    pm2 restart vue3 || pm2 start "npm run preview" --name vue3
+                    BUILD_ID=dontKillMe pm2 restart vue3 || pm2 start "npm run preview" --name vue3
                     '''
                     // BUILD_ID=dontKillMe nohup java -jar /var/lib/jenkins/workspace/board9/build/libs/board9-0.0.1-SNAPSHOT.jar &
                     // BUILD_ID=dontKillMe nohup java -jar /var/lib/jenkins/workspace/board9@2/build/libs/board9-0.0.1-SNAPSHOT.jar >> nohup.out 2>&1 &
