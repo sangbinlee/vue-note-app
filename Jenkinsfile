@@ -1,23 +1,13 @@
 pipeline {
     agent any
-
+ 
     environment {
+        // NODE_ENV = 'development'
+        // NODE_ENV = 'production'
         PROJECT_NAME = "vue-note-app"
-        WORKSPACE = "/var/lib/jenkins/workspace/"
-        LOG_PATH ="${env.WORKSPACE}${env.PROJECT_NAME}"
-        // TEST_PREFIX = "test-IMAGE"
-        // TEST_IMAGE = "${env.TEST_PREFIX}:${env.BUILD_NUMBER}"
-        // TEST_CONTAINER = "${env.TEST_PREFIX}-${env.BUILD_NUMBER}"
-        // REGISTRY_ADDRESS = "my.registry.address.com"
-
-        // SLACK_CHANNEL = "#deployment-notifications"
-        // SLACK_TEAM_DOMAIN = "MY-SLACK-TEAM"
-        // SLACK_TOKEN = credentials("slack_token")
-        // DEPLOY_URL = "https://deployment.example.com/"
-
-        // COMPOSE_FILE = "docker-compose.yml"
-        // REGISTRY_AUTH = credentials("docker-registry")
-        // STACK_PREFIX = "my-project-stack-name"
+        BUILD_ID = 'dontKillMe' // Jenkins의 ProcessTreeKiller 방지
+        // JENKINS_NODE_COOKIE = 'dontKillMe' // Jenkins의 ProcessTreeKiller 방지
+        // PM2_HOME = '/var/lib/jenkins/.pm2'
     }
     stages { 
         stage('■■■■Build && Deploy  @@@222 생겨서 함침') {
@@ -31,8 +21,8 @@ pipeline {
                     npm install
                     echo '■ npm run build'
                     npm run build
-                    echo '■ npm run preview'
-                    npm run preview
+                    echo '■ npm run preview' 
+                    pm2 restart "vue3" || pm2 start "npm run preview" --name vue3'
                     '''
                     // BUILD_ID=dontKillMe nohup java -jar /var/lib/jenkins/workspace/board9/build/libs/board9-0.0.1-SNAPSHOT.jar &
                     // BUILD_ID=dontKillMe nohup java -jar /var/lib/jenkins/workspace/board9@2/build/libs/board9-0.0.1-SNAPSHOT.jar >> nohup.out 2>&1 &
