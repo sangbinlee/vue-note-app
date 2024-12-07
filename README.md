@@ -176,3 +176,7 @@ https://jenkins.dev9.store/manage/credentials/store/system/domain/_/credential/4
     sangbinlee9@dev9-ubuntu24-1:/etc$ date
     Sat Dec  7 11:50:12 AM KST 2024
     sangbinlee9@dev9-ubuntu24-1:/etc$
+
+# jenkins timezone 변경 하기
+
+![jenkins timezone 변경 하기](image-9.png)
