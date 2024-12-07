@@ -182,3 +182,5 @@ https://jenkins.dev9.store/manage/credentials/store/system/domain/_/credential/4
 ![jenkins timezone 변경 하기](image-9.png)
 
     https://www.jenkins.io/doc/book/managing/change-system-timezone/
+
+![jenkins timezone](image-10.png)
