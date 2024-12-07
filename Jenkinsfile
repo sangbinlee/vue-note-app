@@ -26,7 +26,7 @@ pipeline {
 
                 sh '''
                     pwd
-                    ll
+                    ls -alt
                     echo '■ npm install'
                     npm install
                     echo '■ npm run build'
