@@ -345,3 +345,5 @@ npm install
 ![install pm2 ](image-13.png)
 
 ![update pm2](image-14.png)
+
+pm2 logs
