@@ -324,3 +324,9 @@ root@dev9-ubuntu24-1:/etc/nginx/sites-available#
 # jenkins config
 
 ![jenkins config](image-11.png)
+
+# npm: not found
+
+    npm install
+
+    ![npm install](image-12.png)
