@@ -27,6 +27,8 @@ pipeline {
             steps {
                 echo '■Deploying....start...'
                 sh '''
+                    pwd
+                    ll
                     echo '■ npm install'
                     npm install
                     echo '■ npm run build'
