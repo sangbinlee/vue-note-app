@@ -189,3 +189,134 @@ https://jenkins.dev9.store/manage/credentials/store/system/domain/_/credential/4
 
 # webhook
 ![image](https://github.com/user-attachments/assets/fad9bf75-2ff6-4b58-8cfe-806e90acc887)
+
+
+# vue3.dev9.store
+
+  
+  
+  root@dev9-ubuntu24-1:/etc/nginx/sites-available# cp api.dev9.store vue3.dev9.store
+  root@dev9-ubuntu24-1:/etc/nginx/sites-available# vi vue3.dev9.store
+  root@dev9-ubuntu24-1:/etc/nginx/sites-available# nginx -t
+  nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+  nginx: configuration file /etc/nginx/nginx.conf test is successful
+  root@dev9-ubuntu24-1:/etc/nginx/sites-available# cat vue3.dev9.store
+  # Default server configuration
+  server {
+  
+          server_name vue3.dev9.store;
+  
+          location / {
+                  proxy_set_header Host $host;
+                  proxy_set_header X-Real-IP $remote_addr;
+                  #proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                  #proxy_set_header X-Forwarded-Proto $scheme;
+                  proxy_pass http://localhost:3001;
+          }
+  
+  }
+  
+  server {
+          if ($host = vue3.dev9.store) {
+                  return 301 https://$host$request_uri;
+          } # managed by Certbot
+  
+          listen 80 ;
+          listen [::]:80 ;
+  
+          server_name vue3.dev9.store;
+          return 404; # managed by Certbot
+  
+  }
+  
+  root@dev9-ubuntu24-1:/etc/nginx/sites-available# ls -s /etc/nginx/sites-available/vue3.dev9.store /etc/ngi                        nx/sites-enabled/
+  4 /etc/nginx/sites-available/vue3.dev9.store
+  
+  /etc/nginx/sites-enabled/:
+  total 0
+  0 api.dev9.store  0 default  0 dev9.store  0 jenkins.dev9.store
+  root@dev9-ubuntu24-1:/etc/nginx/sites-available# ln -s /etc/nginx/sites-available/vue3.dev9.store /etc/ngi                        nx/sites-enabled/
+  root@dev9-ubuntu24-1:/etc/nginx/sites-available# ls -s
+  total 20
+  4 api.dev9.store  4 default  4 dev9.store  4 jenkins.dev9.store  4 vue3.dev9.store
+  root@dev9-ubuntu24-1:/etc/nginx/sites-available# ll
+  total 28
+  drwxr-xr-x 2 root root 4096 Dec  7 22:08 ./
+  drwxr-xr-x 8 root root 4096 Dec  7 21:48 ../
+  -rw-r--r-- 1 root root  899 Dec  7 21:53 api.dev9.store
+  -rw-r--r-- 1 root root 2412 Dec  1  2023 default
+  -rw-r--r-- 1 root root 1171 Nov 25 04:52 dev9.store
+  -rw-r--r-- 1 root root  817 Nov 25 05:29 jenkins.dev9.store
+  -rw-r--r-- 1 root root  521 Dec  7 22:08 vue3.dev9.store
+  root@dev9-ubuntu24-1:/etc/nginx/sites-available# service nginx restart
+  root@dev9-ubuntu24-1:/etc/nginx/sites-available# certbot --nginx -d vue3.dev9.store
+  Saving debug log to /var/log/letsencrypt/letsencrypt.log
+  Requesting a certificate for vue3.dev9.store
+  
+  Successfully received certificate.
+  Certificate is saved at: /etc/letsencrypt/live/vue3.dev9.store/fullchain.pem
+  Key is saved at:         /etc/letsencrypt/live/vue3.dev9.store/privkey.pem
+  This certificate expires on 2025-03-07.
+  These files will be updated when the certificate renews.
+  Certbot has set up a scheduled task to automatically renew this certificate in the background.
+  
+  Deploying certificate
+  Successfully deployed certificate for vue3.dev9.store to /etc/nginx/sites-enabled/vue3.dev9.store
+  Congratulations! You have successfully enabled HTTPS on https://vue3.dev9.store
+  
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  If you like Certbot, please consider supporting our work by:
+   * Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   * Donating to EFF:                    https://eff.org/donate-le
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  root@dev9-ubuntu24-1:/etc/nginx/sites-available# cat vue3.dev9.store
+  # Default server configuration
+  server {
+  
+          server_name vue3.dev9.store;
+  
+          location / {
+                  proxy_set_header Host $host;
+                  proxy_set_header X-Real-IP $remote_addr;
+                  #proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                  #proxy_set_header X-Forwarded-Proto $scheme;
+                  proxy_pass http://localhost:3001;
+          }
+  
+  
+  
+      listen 443 ssl; # managed by Certbot
+      ssl_certificate /etc/letsencrypt/live/vue3.dev9.store/fullchain.pem; # managed by Certbot
+      ssl_certificate_key /etc/letsencrypt/live/vue3.dev9.store/privkey.pem; # managed by Certbot
+      include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+      ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+  
+  }
+  
+  server {
+          if ($host = vue3.dev9.store) {
+                  return 301 https://$host$request_uri;
+          } # managed by Certbot
+  
+          listen 80 ;
+          listen [::]:80 ;
+  
+          server_name vue3.dev9.store;
+          return 404; # managed by Certbot
+  
+  }
+  
+  
+  server {
+      if ($host = vue3.dev9.store) {
+          return 301 https://$host$request_uri;
+      } # managed by Certbot
+  
+  
+  
+          server_name vue3.dev9.store;
+      listen 80;
+      return 404; # managed by Certbot
+  
+  
+  root@dev9-ubuntu24-1:/etc/nginx/sites-available#
