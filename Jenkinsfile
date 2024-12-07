@@ -19,8 +19,6 @@ pipeline {
         // REGISTRY_AUTH = credentials("docker-registry")
         // STACK_PREFIX = "my-project-stack-name"
     }
-
-
     stages { 
         stage('■■■■Build && Deploy  @@@222 생겨서 함침') {
             steps {
