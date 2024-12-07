@@ -31,7 +31,7 @@ pipeline {
           steps {
             echo 'vue3 building the application...  now....'
             // sh 'npm run dev'
-            sh 'pm2 restart "vue3" || pm2 start "npm run preview" --name vue3'
+            sh 'sudo pm2 restart "vue3" || sudo pm2 start "npm run preview" --name vue3'
           }
         } 
     }
