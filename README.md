@@ -339,3 +339,7 @@ npm install
 /var/lib/jenkins/workspace/vue-note-app@tmp/durable-fb04e966/script.sh.copy: 5: npm: not found
 
 ![image](https://github.com/user-attachments/assets/be430e8f-b811-44df-96fb-04a5a7c5316a)
+
+## jenkins job never ending....
+
+![install pm2 ](image-13.png)
